@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 7rem !important; /* Force the padding */
+  padding-block: 0;
+  width: 100%; /* Ensure full width */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+@theme {
+  /* project colors */
+  --color-W: #ffff;
+  --color-100: #F3F6FB;
+  --color-P: #2F57EF;
+  --color-900: #192335;
+
+  /* fonts */
+  --font-Poppins: "Poppins", sans-serif;
+  --font-Inter: "Inter", sans-serif;
+
+  /* breakpoints */
+  --breakpoint-*: initial;
+  --breakpoint-sm: 375px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
