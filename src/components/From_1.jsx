@@ -1,6 +1,6 @@
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
-import background from '../assets/contact.png';
+import background from '../assets/Contact.png';
 import contactImg from '../assets/contact_1.png';
 import MainButton from './MainButton';
 
