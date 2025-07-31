@@ -1,7 +1,6 @@
-import React from 'react'
-import Recent_Img_1 from '../assets/Recent_Img_1.png'
-import Recent_Img_2 from '../assets/Recent_Img_2.png'
-import Recent_Img_3 from '../assets/Recent_Img_3.png'
+import Recent_Img_1 from '../assets/recent_Img_1.png'
+import Recent_Img_2 from '../assets/recent_Img_2.png'
+import Recent_Img_3 from '../assets/recent_Img_3.png'
 
 const post_items = [
   {
