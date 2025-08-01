@@ -1,4 +1,3 @@
-import { BiRightArrow } from 'react-icons/bi'
 import pattern from '../assets/Banner_Pattern.png'
 import { NavLink } from 'react-router-dom'
 import { MdKeyboardArrowRight } from 'react-icons/md'

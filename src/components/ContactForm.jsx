@@ -10,7 +10,7 @@ const ContactForm = () => {
     <input
       type={type}
       placeholder={placeholder}
-      className="border rounded-md p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+      className="border rounded-md p-[20px] w-full"
     />
   )
 
@@ -18,10 +18,10 @@ const ContactForm = () => {
     <section className="py-16 px-4 bg-white" id="Contact">
       <div className="max-w-4xl mx-auto">
        
-        <div className="text-center mb-8">
-          <p className="text-sm font-semibold text-blue-600 mb-2">GET IN TOUCH</p>
-          <h2 className="text-3xl font-bold text-gray-900">
-            Bringing your <span className="text-blue-600">vision</span> to life
+        <div className=" mb-8">
+          <p className="font-Inter font-bold text-[18px] leading-[31.5px] text-P">GET IN TOUCH</p>
+          <h2 className="font-Inter font-bold sm:text-[32px] md:text-[42px] sm:leading-[40px] md:leading-[54px] text-900">
+            Bringing your <span className="text-P">vision</span> to life
           </h2>
         </div>
 
@@ -39,13 +39,13 @@ const ContactForm = () => {
           <textarea
             rows="5"
             placeholder="Message"
-            className="border rounded-md p-3 w-full resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="border p-[12px] w-full"
           ></textarea>
 
           
           <button
             type="submit"
-            className="bg-blue-600 text-white w-full py-3 rounded-md text-sm font-medium hover:bg-blue-700 transition"
+            className="bg-p bg-P text-white w-full py-[21px] font-Inter font-normal text-[17px]  leading-[26px] "
           >
             submit now
           </button>

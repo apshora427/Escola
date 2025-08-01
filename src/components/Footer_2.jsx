@@ -1,30 +1,26 @@
-import { FaArrowRight, FaPhoneAlt } from "react-icons/fa";
-import { FaFacebookF, FaLinkedinIn, FaLocationDot, FaTwitter } from "react-icons/fa6";
-import { IoLogoInstagram } from "react-icons/io";
-import { MdEmail } from "react-icons/md";
-import Web_Reserved from "./Web_Reserved";
-import background from '../assets/BACKGROUND.png';
-import NewsletterForm from "./NewsletterForm";
+import { FaArrowRight, FaFacebookF, FaLinkedinIn, FaPhoneAlt, FaTwitter } from 'react-icons/fa'
+import background from '../assets/Layer_2.png'
+import Web_Reserved from './Web_Reserved'
+import { MdEmail } from 'react-icons/md'
+import { FaLocationDot } from 'react-icons/fa6'
+import { IoLogoInstagram } from 'react-icons/io'
 
-const Footer = () => {
+const Footer_2 = () => {
   return (
-    <footer
-      className="bg-[#192335] mt-[250px]"
+     <footer
+      className="bg-[#f6f3fb]"
     >
 
       <div className="" />
 
-      <div className="relative bg-no-repeat bg-cover  text-white"
+      <div className="relative bg-no-repeat bg-cover  text-900"
         style={{ backgroundImage: `url(${background})` }}>
         <div className="container">
-          <div className="absolute -translate-1/2 -top-[50px] left-1/2">
-            <NewsletterForm />
-          </div>
-          <div className="pt-[186px] grid grid-cols-[300px_200px_202px_300px] gap-[100px] pb-[93px]">
+          <div className="pt-[136px] grid grid-cols-[300px_200px_202px_300px] gap-[100px] pb-[93px]">
 
             <div>
               <div className="mb-[13px]">
-                <img src="Footer_Logo.png" alt="Logo" />
+                <img src="Footer_Logo_1.png" alt="Logo" />
               </div>
               <p className="font-Inter font-normal text-[17px] leading-[26px] mb-[40px]">
                 Melbourne is simply is dumiomy is text rinting Lorem Ips is simply dummy Lorem Ipsum is simply
@@ -82,11 +78,10 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
-
+export default Footer_2
 
 const Items = ({ text }) => {
   return (
@@ -101,8 +96,8 @@ const Items = ({ text }) => {
 
 const Social_Side = ({ img }) => {
   return (
-    <div className="size-[40px] bg-[#242e3f] rounded-full flex justify-center items-center hover:bg-P transition-all cursor-pointer">
-      <span className="text-white text-[16px]">{img}</span>
+    <div className="size-[40px] rounded-full flex justify-center items-center transition-all cursor-pointer border-[2px] border-white">
+      <span className="text-900 hover:text-P  text-[16px]">{img}</span>
     </div>
   );
 };

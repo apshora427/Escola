@@ -40,9 +40,9 @@ const CompanySlider_Section = () => {
   };
 
   return (
-    <section className="py-[40px]">
+    <section className="py-[40px] mt-[120px]">
       <div className="container">
-        <div className=" bg-white">
+        <div className=" bg-[#fff">
           <Slider {...settings}>
             {logos.map((logo, index) => (
               <div key={index} className="!flex !items-center !justify-center px-[16px] h-[80px]">

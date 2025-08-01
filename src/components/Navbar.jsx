@@ -97,7 +97,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="relative bg-100">
+    <nav className="relative bg-100 z-[100] ">
       <div className="absolute top-0">
         <img src={iconBg} alt="" />
       </div>
