@@ -13,8 +13,8 @@ const categories = [
 ];
 
 const brochures = [
-  { label: 'Company Profile', isActive: false },
-  { label: 'Zip File Download', isActive: true },
+  { label: 'Company Profile' },
+  { label: 'Zip File Download' },
 ];
 
 const CategoryBrochureSection = () => {
@@ -24,28 +24,19 @@ const CategoryBrochureSection = () => {
       <div>
         <h2 className="text-xl font-bold mb-4">Category</h2>
         <div className="flex flex-col gap-2">
-          {categories.map((item, index) => {
-            const isActive = index === 5;
-            return (
-              <div
-                key={index}
-                className={`flex items-center justify-between px-4 py-3 rounded-lg border transition-colors duration-300 cursor-pointer ${
-                  isActive ? 'bg-P text-white' : 'bg-white hover:bg-blue-50 text-900'
-                }`}
-              >
-                <div className={`flex items-center gap-3 font-medium ${
-                  isActive ? 'text-white' : 'text-black'
-                }`}>
-                  <div className={`w-6 h-6 flex items-center justify-center rounded-full border ${
-                    isActive ? 'bg-white text-P' : 'bg-white border text-P'
-                  }`}>
-                    <FaArrowRight size={10} />
-                  </div>
-                  <span>{item}</span>
+          {categories.map((item, index) => (
+            <div
+              key={index}
+              className="flex items-center justify-between px-4 py-3 rounded-lg border bg-white hover:bg-P text-black hover:text-white transition-all duration-300 cursor-pointer group"
+            >
+              <div className="flex items-center gap-3 font-medium text-black group-hover:text-white">
+                <div className="w-6 h-6 flex items-center justify-center rounded-full border bg-white text-P transition-all duration-300 group-hover:bg-P group-hover:text-white">
+                  <FaArrowRight size={10} />
                 </div>
+                <span>{item}</span>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
 
@@ -56,16 +47,10 @@ const CategoryBrochureSection = () => {
           {brochures.map((item, index) => (
             <div
               key={index}
-              className={`flex items-center justify-between px-4 py-3 rounded-lg border transition-colors duration-300 cursor-pointer ${
-                item.isActive ? 'bg-white text-P hover:bg-blue-50' : 'bg-white text-900 hover:bg-blue-50'
-              }`}
+              className="flex items-center justify-between px-4 py-3 rounded-lg border bg-white text-black hover:bg-P transition-all duration-300 cursor-pointer group"
             >
-              <span className={`font-medium ${
-                item.isActive ? 'text-P' : 'text-900'
-              }`}>{item.label}</span>
-              <div className={`w-7 h-7 flex items-center justify-center rounded-full ${
-                item.isActive ? 'bg-P text-white' : 'bg-blue-100 text-P'
-              }`}>
+              <span className="font-medium text-black group-hover:text-white">{item.label}</span>
+              <div className="w-7 h-7 flex items-center justify-center rounded-full bg-blue-100 text-P transition-all duration-300 group-hover:bg-P group-hover:text-white">
                 <FaArrowRight size={12} />
               </div>
             </div>

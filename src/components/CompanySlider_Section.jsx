@@ -40,7 +40,7 @@ const CompanySlider_Section = () => {
   };
 
   return (
-    <section className="py-[40px] mt-[120px]">
+    <section className="py-[40px]">
       <div className="container">
         <div className=" bg-[#fff">
           <Slider {...settings}>

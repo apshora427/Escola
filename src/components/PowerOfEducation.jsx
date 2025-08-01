@@ -2,7 +2,6 @@ import img_1 from '../assets/Top_Course_1.png'
 import img_2 from '../assets/Top_Course_2.png'
 import { TiTick } from 'react-icons/ti'
 import Hard_Working from './Hard_Working'
-import Hero from './Hero'
 
 const items = [
     {
@@ -22,8 +21,8 @@ const items = [
 
 const PowerOfEducation = () => {
     return (
-        <div>
-            <div>
+        <section>
+            <div className=''> 
                 <div>
                     <h2 className='font-Inter font-bold sm:text-[32px] md:text-[42px] sm:leading-[40px] md:leading-[54px] text-900 mb-[25px]'>
                         Unlocking the Power of Education: A Comprehensive Look
@@ -51,7 +50,7 @@ const PowerOfEducation = () => {
             <div>
                 <Hard_Working/>
             </div>
-        </div>
+        </section>
     )
 }
 

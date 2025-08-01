@@ -5,7 +5,7 @@ import vector from '../assets/vector.png'
 
 const Impact_of_Education = () => {
     return (
-        <section>
+        <section className='mt-[120px]'>
             <div className="container">
                 <div className=''>
                     <div>

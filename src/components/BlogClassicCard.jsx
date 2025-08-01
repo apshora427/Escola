@@ -1,4 +1,5 @@
 import { FaUser, FaFolderOpen, FaCalendarAlt } from 'react-icons/fa'
+import Side_Button from './Side_Button'
 
 const BlogClassicCard = ({ img, date, title, description }) => {
   return (
@@ -23,13 +24,11 @@ const BlogClassicCard = ({ img, date, title, description }) => {
             {date}
           </span>
         </div>
-        <h3 className="text-xl font-bold text-gray-900 leading-snug mb-2">
+        <h3 className="font-Inter font-bold text-[36px] leading-[50px] text-900">
           {title}
         </h3>
-        <p className="text-sm text-gray-600 leading-relaxed mb-4">{description}</p>
-        <button className="bg-blue-600 text-white px-4 py-2 text-sm rounded hover:bg-blue-700 transition">
-          Read More →
-        </button>
+        <p className="text-900 font-Inter font-normal text-[17px] leading-[26px]">{description}</p>
+       <Side_Button button_text={"Read more"} className={"text-white bg-P py-[8px] px-[8px] rounded-[10px]"}/>
       </div>
     </div>
   )

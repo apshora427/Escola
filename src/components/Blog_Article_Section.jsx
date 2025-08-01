@@ -31,14 +31,15 @@ const Blog_Article_Section = () => {
     <section className="mt-[109px] mb-[120px]">
       <div className="container">
         <div>
-          <div className="grid grid-cols-[1fr_500px] gap-[200px] mb-[50px]">
+          <div className="grid grid-cols-[1fr_500px] items-center justify-between  mb-[50px]">
             <div>
               <Heading
                 section={"Latest news"}
                 heading={"Transforming your vision into reality"}
+                className={"w-[553px]"}
               />
             </div>
-            <div>
+            <div className="flex justify-end">
               <MainButton
                 bgColor="bg-white"
                 textColor="text-black"

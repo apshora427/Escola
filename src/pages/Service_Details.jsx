@@ -8,8 +8,8 @@ const Service_Details = () => {
     <div>
       <Hero title="Service Details" page="Service Details" />
       <Service_Layout
-        children={<PowerOfEducation />}
         sidebar={<CategoryBrochureSection />}
+        children={<PowerOfEducation />}
       />
     </div>
   );

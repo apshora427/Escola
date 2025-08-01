@@ -14,7 +14,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto mt-10">
+    <div className="w-full max-w-md  mt-[120px]">
       <h2 className="text-P text-lg font-semibold mb-1">Search Here</h2>
       <div className="h-1 w-full bg-gray-200 mb-3">
         <div className="h-1 w-16 bg-P"></div>
