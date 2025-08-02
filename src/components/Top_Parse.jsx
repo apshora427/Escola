@@ -3,6 +3,9 @@ import Top_Parse from "../assets/Top_Parse.png";
 import Layer_1 from "../assets/Layer_1.png";
 import Heading from "../components/Heading";
 import MainButton from "../components/MainButton";
+import dancingImage from '../assets/DancingImage_3.png'
+import dancingImage_1 from '../assets/DancingImage_4.png'
+import { motion } from "framer-motion";
 
 const Top_Parse_Section = () => {
     const items = [
@@ -24,8 +27,46 @@ const Top_Parse_Section = () => {
     ];
 
     return (
-        <section className="bg-cover bg-no-repeat bg-center pt-[70px] pb-[440px] relative"
+        <section className="bg-cover bg-no-repeat bg-center pt-[70px] pb-[440px] relative mt-[120px]"
             style={{ backgroundImage: `url(${Layer_1})` }}>
+                 <div className='absolute -top-[100px] left-[0px] translate-1/2'>
+                            <motion.div
+                                animate={{
+                                    y: [0, -15, 0],
+                                }}
+                                transition={{
+                                    duration: 2,
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
+                                }}
+                                className="inline-block" 
+                            >
+                                <img
+                                    src={dancingImage}
+                                    alt="Dancing"
+                                    className="w-20 h-20 rounded-lg"
+                                />
+                            </motion.div>
+                        </div>
+                        <div className='absolute -top-[100px] right-[85px] translate-1/2'>
+                            <motion.div
+                                animate={{
+                                    y: [0, -15, 0],
+                                }}
+                                transition={{
+                                    duration: 2,
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
+                                }}
+                                className="inline-block" 
+                            >
+                                <img
+                                    src={dancingImage_1}
+                                    alt="Dancing"
+                                    className=""
+                                />
+                            </motion.div>
+                        </div>
             <div className="container">
                 <div className="grid grid-cols-[1fr_500px] gap-[200px] mb-[50px]">
                     <div>

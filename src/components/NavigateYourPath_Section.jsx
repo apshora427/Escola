@@ -78,13 +78,13 @@ const NavigateYourPath_Section = () => {
           <div className="flex gap-[12px] mr-[130px]">
             <button
               onClick={() => sliderRef.current?.slickPrev()}
-              className="w-[40px] h-[40px] rounded-full border border-P text-P flex items-center justify-center hover:text-white transition-all"
+              className="w-[40px] h-[40px] rounded-full border border-P text-P flex items-center justify-center hover:text-white hover:bg-P cursor-pointer transition-all"
             >
               <FaArrowLeft />
             </button>
             <button
               onClick={() => sliderRef.current?.slickNext()}
-              className="w-[40px] h-[40px] rounded-full border border-P text-P flex items-center justify-center hover:text-white transition-all"
+              className="w-[40px] h-[40px] rounded-full border border-P text-P flex items-center justify-center hover:text-white hover:bg-P cursor-pointer transition-all"
             >
               <FaArrowRight />
             </button>

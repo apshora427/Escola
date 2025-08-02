@@ -1,8 +1,12 @@
-import React from 'react'
+import Hero from "../components/Hero"
+import Map from "../components/Map"
 
 const Contact_Us = () => {
   return (
-    <div>Contact_Us</div>
+    <div>
+      <Hero title={"Contact"} page={"Contact"}/>
+      <Map/>
+    </div>
   )
 }
 

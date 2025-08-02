@@ -50,7 +50,7 @@ const Blog_Article_Section = () => {
               />
             </div>
           </div>
-          <div className="grid grid-cols-3">
+          <div className="grid grid-cols-3 gap-[30px]">
             {blogArticles.map((article, index) => (
               <Blog_Article_Card key={index} {...article} />
             ))}

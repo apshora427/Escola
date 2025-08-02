@@ -34,7 +34,7 @@ const card_items = [
         studentsNumber: "20 students",
         rate: "(12)",
         aboutCourse: "Python for Data Science & Machine",
-        profile:profile
+        profile: profile
     },
 
 ]
@@ -45,15 +45,14 @@ const Courses = () => {
             <div className="container">
                 <div>
                     <div className='flex justify-center items-center'>
-                        <Heading section={"Top Popular Course"} heading={"Building a better tomorrow"} className={"text-center"}/>
+                        <Heading section={"Top Popular Course"} heading={"Building a better tomorrow"} className={"text-center"} />
                     </div>
                     <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-[30px] justify-center items-center relative mt-[60px]'>
                         {
-                            card_items?.map((item) => {
+                            card_items?.map((item, index) => {
                                 return (
-                                    <div className=''>
+                                    <div key={index} className=''>
                                         <CoursesCard
-                                            key={item.id}
                                             img={item.img}
                                             courseName={item.courseName}
                                             studentsNumber={item.studentsNumber}
@@ -65,6 +64,7 @@ const Courses = () => {
                                 )
                             })
                         }
+
                         <div className='absolute top-[450px] right-[0px] translate-1/2'>
                             <motion.div
                                 animate={{
@@ -75,7 +75,7 @@ const Courses = () => {
                                     repeat: Infinity,
                                     ease: "easeInOut"
                                 }}
-                                className="inline-block" 
+                                className="inline-block"
                             >
                                 <img
                                     src={DancingPattern_1}

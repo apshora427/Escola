@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://unpkg.com/leaflet/dist/leaflet.css');
 
 @import "tailwindcss";
 
-
 @utility container {
   margin-inline: auto;
-  padding-inline: 7rem !important; /* Force the padding */
+  padding-inline: 7rem !important;
   padding-block: 0;
-  width: 100%; /* Ensure full width */
-  box-sizing: border-box; /* Include padding in width calculation */
+  width: 100%;
+  box-sizing: border-box; 
 }
 
 @theme {

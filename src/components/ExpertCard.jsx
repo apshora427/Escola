@@ -3,7 +3,7 @@ import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const ExpertCard = ({ image, name, department }) => {
   return (
-    <div className="group bg-white p-4 rounded-2xl shadow-md transition-transform duration-300 hover:-translate-y-2">
+    <div className="group bg-white p-4 rounded-2xl shadow-md transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
       <div className="relative overflow-hidden rounded-2xl">
         <img
           src={image}

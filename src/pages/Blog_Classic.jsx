@@ -5,6 +5,7 @@ import RecentPosts from "../components/RecentPosts"
 import CategoryList from "../components/CategoryList"
 import PopularTags from "../components/PopularTags"
 import BlogLayout from "../LayOut/Blog_Layout"
+import ScrollToTopButton from "../components/ScrollToTopButton"
 
 const Blog_Classic = () => {
   return (
@@ -22,6 +23,7 @@ const Blog_Classic = () => {
       >
         <BlogClassicList />
       </BlogLayout>
+      <ScrollToTopButton/>
     </section>
   )
 }

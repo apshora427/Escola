@@ -3,7 +3,9 @@ import { FaFolderOpen, FaRegComments } from "react-icons/fa";
 const Blog_Article_Card = ({ image, category, comments, title }) => {
   return (
     <div className="relative ">
-      <img src={image} alt={title} className="" />
+     <div className="relative cursor-pointer group transition-all duration-300 hover:shadow-xl hover:scale-[1.02] rounded-lg overflow-hidden">
+       <img src={image} alt={title} className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110 w-full" />
+     </div>
       <div
         className="
           absolute left-[205px] transform -translate-x-1/2 -bottom-[80px]

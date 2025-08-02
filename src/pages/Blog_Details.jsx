@@ -6,6 +6,7 @@ import CategoryList from '../components/CategoryList';
 import PopularTags from '../components/PopularTags';
 import Impact_of_Education from '../components/Impact_of_Education'
 import BlogLayout from '../LayOut/Blog_Layout';
+import ScrollToTopButton from '../components/ScrollToTopButton';
 
 const Blog_Details = () => {
   return (
@@ -22,6 +23,7 @@ const Blog_Details = () => {
           </>
         }
       />
+      <ScrollToTopButton/>
     </div>
   );
 };

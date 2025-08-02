@@ -41,12 +41,11 @@ const CoursesCard = ({ img, courseName, studentsNumber, rate, aboutCourse, profi
                         <h4 className='font-Inter text-[13px] leaidng-[21px]'>By Angela</h4>
                     </div>
                     <div>
-                        <Side_Button button_text={'Enroll Now'} />
+                        <Side_Button button_text={'Enroll Now'} className={"text-P"}/>
                     </div>
                 </div>
             </div>
         </div>
-
     )
 }
 export default CoursesCard

@@ -5,6 +5,7 @@ import Service_We_Offer from '../components/Service_We_Offer'
 import CompanySlider_Section from '../components/CompanySlider_Section'
 import GuideSection from '../components/GuideSection'
 import Form_2 from '../components/Form_2'
+import ScrollToTopButton from '../components/ScrollToTopButton'
 
 const About_Us = () => {
   return (
@@ -16,6 +17,7 @@ const About_Us = () => {
       <CompanySlider_Section/>
       <GuideSection/>
       <Form_2/>
+      <ScrollToTopButton/>
     </div>
   )
 }

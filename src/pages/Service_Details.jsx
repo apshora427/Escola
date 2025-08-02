@@ -2,6 +2,7 @@ import Hero from '../components/Hero';
 import PowerOfEducation from '../components/PowerOfEducation';
 import CategoryBrochureSection from '../components/CategoryBrochureSection';
 import Service_Layout from '../LayOut/Service_Layout';
+import ScrollToTopButton from '../components/ScrollToTopButton';
 
 const Service_Details = () => {
   return (
@@ -11,6 +12,7 @@ const Service_Details = () => {
         sidebar={<CategoryBrochureSection />}
         children={<PowerOfEducation />}
       />
+      <ScrollToTopButton/>
     </div>
   );
 };

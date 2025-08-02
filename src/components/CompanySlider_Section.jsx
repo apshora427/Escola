@@ -6,6 +6,8 @@ import company_logo_2 from "../assets/company_logo_2.png";
 import company_logo_3 from "../assets/company_logo_3.png";
 import company_logo_4 from "../assets/company_logo_4.png";
 import company_logo_5 from "../assets/company_logo_5.png";
+import dancingImage from '../assets/DancingImage_5.png'
+import { motion } from "framer-motion";
 
 const logos = [
   company_logo_1,
@@ -40,7 +42,26 @@ const CompanySlider_Section = () => {
   };
 
   return (
-    <section className="py-[40px]">
+    <section className="py-[40px] relative">
+      <div className='absolute -top-[40px]'>
+        <motion.div
+          animate={{
+            y: [0, -15, 0],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="inline-block"
+        >
+          <img
+            src={dancingImage}
+            alt="Dancing"
+            className=""
+          />
+        </motion.div>
+      </div>
       <div className="container">
         <div className=" bg-[#fff">
           <Slider {...settings}>

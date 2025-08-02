@@ -8,6 +8,7 @@ import FutureGeneration from '../components/FutureGenaration'
 import GuideSection from '../components/GuideSection'
 import MainButton from '../components/MainButton'
 import NewsletterSection from '../components/NewsletterSection'
+import ScrollToTopButton from '../components/ScrollToTopButton'
 import Service_We_Offer from '../components/Service_We_Offer'
 import Top_Parse_Section from '../components/Top_Parse'
 
@@ -26,6 +27,7 @@ const Home = () => {
       <GuideSection />
       <From_1/>
       <Blog_Article_Section />
+      <ScrollToTopButton/>
     </div>
   )
 }
