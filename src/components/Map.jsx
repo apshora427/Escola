@@ -11,8 +11,8 @@ import map_2 from '../assets/map_2.png';
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import Contact_Info_Card from './Contact_Info_Card';
 
-// Enable Ctrl + Scroll zooming
 const CtrlScrollZoom = () => {
   const map = useMap();
 
@@ -37,7 +37,6 @@ const CtrlScrollZoom = () => {
   return null;
 };
 
-// Custom zoom control at bottom right
 const CustomZoomControl = () => {
   const map = useMap();
 
@@ -67,7 +66,7 @@ const mapStyles = [
     name: 'Satellite',
     url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
     attribution: '&copy; Esri contributors',
-    preview: map_2, // This should be a crisp screenshot of the Satellite view
+    preview: map_2,
   },
 ];
 
@@ -79,6 +78,7 @@ const Map = () => {
   const [mapStyleIndex, setMapStyleIndex] = useState(0);
   const [hasEnteredView, setHasEnteredView] = useState(false);
   const [showPuzzle, setShowPuzzle] = useState(false);
+  const [hasToggledOnce, setHasToggledOnce] = useState(false); // NEW
 
   const mapCenter = [23.8103, 90.4125]; // Dhaka
 
@@ -96,15 +96,20 @@ const Map = () => {
 
   const handleToggle = () => {
     const nextIndex = (mapStyleIndex + 1) % mapStyles.length;
+    const isFirstSatellite = !hasToggledOnce && mapStyles[nextIndex].name === 'Satellite';
 
-    if (mapStyles[nextIndex].name === 'Satellite') {
+    if (isFirstSatellite) {
+      setHasToggledOnce(true); 
       setShowPuzzle(true);
+
+      const totalAnimationTime = PUZZLE_ROWS * PUZZLE_COLS * 20 + 800;
 
       setTimeout(() => {
         setMapStyleIndex(nextIndex);
         setShowPuzzle(false);
-      }, 1000); // Matches animation duration
+      }, totalAnimationTime);
     } else {
+      
       setMapStyleIndex(nextIndex);
     }
   };
@@ -112,9 +117,13 @@ const Map = () => {
   return (
     <section
       ref={ref}
-      className="relative w-full min-h-screen flex items-center justify-center py-8"
+      className="relative w-full min-h-screen flex items-center justify-center py-[32px] mt-[120px]"
     >
       <div className="container mx-auto">
+       <div className="absolute -top-24 left-1/2 transform -translate-x-1/2 z-30 w-full max-w-6xl px-4">
+        <Contact_Info_Card />
+      </div>
+
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={hasEnteredView ? { opacity: 1, y: 0 } : {}}
@@ -123,7 +132,7 @@ const Map = () => {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          {/* Hover Overlay */}
+         
           {!isHovered && (
             <div className="absolute inset-0 bg-black/60 z-20 flex items-center justify-center pointer-events-none">
               <p className="text-white text-lg font-semibold">
@@ -132,7 +141,7 @@ const Map = () => {
             </div>
           )}
 
-          {/* Toggle Button */}
+          
           <button
             onClick={handleToggle}
             title={`Switch to ${nextStyle.name} View`}
@@ -145,65 +154,71 @@ const Map = () => {
             />
           </button>
 
-          {/* Puzzle Overlay */}
+         
           <AnimatePresence>
             {showPuzzle && (
               <motion.div
                 key="puzzleOverlay"
-                className="absolute inset-0 z-40 grid"
+                className="absolute inset-0 z-40 grid pointer-events-none"
                 style={{
                   gridTemplateRows: `repeat(${PUZZLE_ROWS}, 1fr)`,
                   gridTemplateColumns: `repeat(${PUZZLE_COLS}, 1fr)`,
                 }}
               >
-                {[...Array(PUZZLE_ROWS * PUZZLE_COLS)].map((_, i) => {
-                  const delay = Math.random() * 0.25;
-                  const row = Math.floor(i / PUZZLE_COLS);
-                  const col = i % PUZZLE_COLS;
+                {(() => {
+                  const totalTiles = PUZZLE_ROWS * PUZZLE_COLS;
+                  const tiles = [...Array(totalTiles).keys()];
+                  const shuffled = [...tiles].sort(() => Math.random() - 0.5);
 
-                  const backgroundSize = `${PUZZLE_COLS * 100}% ${PUZZLE_ROWS * 100}%`;
-                  const backgroundPosition = `${(col / (PUZZLE_COLS - 1)) * 100}% ${(row / (PUZZLE_ROWS - 1)) * 100}%`;
+                  return tiles.map((tileIndex) => {
+                    const row = Math.floor(tileIndex / PUZZLE_COLS);
+                    const col = tileIndex % PUZZLE_COLS;
 
-                  return (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, scale: 0.6, rotate: -10 }}
-                      animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                      transition={{
-                        delay,
-                        duration: 0.25,
-                        ease: 'easeInOut',
-                      }}
-                      style={{
-                        backgroundImage: `url(${nextStyle.preview})`,
-                        backgroundSize,
-                        backgroundPosition,
-                        backgroundRepeat: 'no-repeat',
-                        width: '100%',
-                        height: '100%',
-                      }}
-                    />
-                  );
-                })}
+                    const backgroundSize = `${PUZZLE_COLS * 100}% ${PUZZLE_ROWS * 100}%`;
+                    const backgroundPosition = `${(col / (PUZZLE_COLS - 1)) * 100}% ${(row / (PUZZLE_ROWS - 1)) * 100}%`;
+
+                    return (
+                      <motion.div
+                        key={tileIndex}
+                        initial={{ opacity: 0, scale: 0.6, rotate: -15 }}
+                        animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                        transition={{
+                          delay: shuffled.indexOf(tileIndex) * 0.02,
+                          duration: 0.4,
+                          ease: 'easeInOut',
+                        }}
+                        style={{
+                          backgroundImage: `url(${nextStyle.preview})`,
+                          backgroundSize,
+                          backgroundPosition,
+                          backgroundRepeat: 'no-repeat',
+                          width: '100%',
+                          height: '100%',
+                        }}
+                      />
+                    );
+                  });
+                })()}
               </motion.div>
             )}
           </AnimatePresence>
 
           {/* Map */}
-          <MapContainer
-            center={mapCenter}
-            zoom={13}
-            zoomControl={false}
-            className="w-full h-full z-10"
-          >
-            <TileLayer attribution={currentStyle.attribution} url={currentStyle.url} />
-            <CustomZoomControl />
-            <CtrlScrollZoom />
-
-            <Marker position={mapCenter}>
-              <Popup>Dhaka City Center</Popup>
-            </Marker>
-          </MapContainer>
+          {!showPuzzle && (
+            <MapContainer
+              center={mapCenter}
+              zoom={13}
+              zoomControl={false}
+              className="w-full h-full z-10"
+            >
+              <TileLayer attribution={currentStyle.attribution} url={currentStyle.url} />
+              <CustomZoomControl />
+              <CtrlScrollZoom />
+              <Marker position={mapCenter}>
+                <Popup>Dhaka City Center</Popup>
+              </Marker>
+            </MapContainer>
+          )}
         </motion.div>
       </div>
     </section>
