@@ -11,7 +11,6 @@ const Banner = () => {
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
                 style={{ backgroundImage: `url(${Banner_Image_1})` }}
             >
-                <div className="absolute inset-0 bg-900/65 z-0"></div>
             </div>
 
            
