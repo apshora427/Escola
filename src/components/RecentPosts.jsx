@@ -32,7 +32,7 @@ const post_items = [
 const RecentPosts = () => {
   return (
     <section id="RecentPosts">
-      <div className="border rounded-md p-4 w-full max-w-md bg-white shadow-sm">
+      <div className="border-[3px] border-[#F9FAFB] rounded-[10px] p-[30px] w-full max-w-md bg-white shadow-sm">
         <h2 className="text-lg font-semibold mb-2">Recent Posts</h2>
         <div className="h-0.5 w-16 bg-blue-500 mb-4 rounded"></div>
         <div className="flex flex-col gap-4">

@@ -33,16 +33,20 @@ const blog_items = [
 
 const BlogClassicList = () => {
   return (
-    <section id="BlogClassic" className="px-4 py-8 max-w-4xl mx-auto">
-      {blog_items?.map((item) => (
-        <BlogClassicCard
-          key={item.id}
-          img={item.img}
-          date={item.date}
-          title={item.title}
-          description={item.description}
-        />
-      ))}
+    <section id="BlogClassic">
+      <div className="">
+        <div className='flex flex-col gap-[30px]'>
+          {blog_items?.map((item) => (
+            <BlogClassicCard
+              key={item.id}
+              img={item.img}
+              date={item.date}
+              title={item.title}
+              description={item.description}
+            />
+          ))}
+        </div>
+      </div>
     </section>
   )
 }

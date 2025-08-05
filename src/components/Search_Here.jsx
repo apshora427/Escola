@@ -14,13 +14,13 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="w-full max-w-md  mt-[120px]">
-      <h2 className="text-P text-lg font-semibold mb-1">Search Here</h2>
+    <div className="w-full border-[3px] border-[#F9FAFB] py-[30px] px-[30px] rounded-[10px] mb-[40px]">
+      <h2 className="text-P text-lg font-semibold ">Search Here</h2>
       <div className="h-1 w-full bg-gray-200 mb-3">
         <div className="h-1 w-16 bg-P"></div>
       </div>
 
-      <div className="flex shadow-md rounded-md overflow-hidden px-[20px] py-[12px]">
+      <div className="flex shadow-md rounded-md overflow-hidden px-[20px] py-[12px] mt-[30px]">
         <input
           type="text"
           placeholder="Search...."

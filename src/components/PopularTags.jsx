@@ -12,14 +12,14 @@ const PopularTags = () => {
   ];
 
   return (
-    <div className="border rounded-md p-4 w-fit bg-white shadow-sm">
+    <div className=" border-[3px] border-[#F9FAFB] rounded-[10px] p-[30px] bg-white shadow-sm">
       <h2 className="text-lg font-semibold mb-2">Popular Tags</h2>
-      <div className="h-0.5 w-16 bg-blue-500 mb-4 rounded"></div>
-      <div className="flex flex-wrap gap-2">
+      <div className="h-[2px] w-16 bg-blue-500 mb-4 rounded"></div>
+      <div className="flex flex-wrap gap-[20px]">
         {tags.map((tag, index) => (
           <span
             key={index}
-            className="bg-gray-100 text-gray-700 px-4 py-1 rounded-md text-sm font-medium"
+            className="bg-gray-100 font-Inter font-normal text-[17px] leading-[26px] py-[5px] px-[20px]"
           >
             {tag}
           </span>

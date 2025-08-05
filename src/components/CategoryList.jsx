@@ -30,7 +30,7 @@ const categories = [
 
 const CategoryList = () => {
   return (
-    <div className="w-[320px] mt-10">
+    <div className="w-full mt-[40px] mb-[40px] border-[3px] border-[#F9FAFB] rounded-[10px] p-[30px]">
       <h2 className="text-blue-600 text-lg font-semibold mb-1">Catagory</h2>
       <div className="h-1 w-full bg-gray-200 mb-4">
         <div className="h-1 w-16 bg-blue-600"></div>

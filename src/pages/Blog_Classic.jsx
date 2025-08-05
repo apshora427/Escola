@@ -23,7 +23,7 @@ const Blog_Classic = () => {
       >
         <BlogClassicList />
       </BlogLayout>
-      <ScrollToTopButton/>
+      <ScrollToTopButton />
     </section>
   )
 }

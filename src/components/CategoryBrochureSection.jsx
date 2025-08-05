@@ -1,6 +1,5 @@
-// CategoryBrochureSection.jsx
-import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
+import Brochure from '../assets/Brochure.png'
 
 const categories = [
   'The Benefits',
@@ -13,14 +12,13 @@ const categories = [
 ];
 
 const brochures = [
-  { label: 'Company Profile' },
-  { label: 'Zip File Download' },
+  { label: 'Download Brochure' },
+  { label: 'Company Details' },
 ];
 
 const CategoryBrochureSection = () => {
   return (
     <div className="flex flex-col gap-10">
-      {/* Category Section */}
       <div>
         <h2 className="text-xl font-bold mb-4">Category</h2>
         <div className="flex flex-col gap-2">
@@ -40,19 +38,19 @@ const CategoryBrochureSection = () => {
         </div>
       </div>
 
-      {/* Brochure Section */}
+
       <div>
         <h2 className="text-xl font-bold mb-4">Brochure</h2>
         <div className="flex flex-col gap-2">
           {brochures.map((item, index) => (
             <div
               key={index}
-              className="flex items-center justify-between px-4 py-3 rounded-lg border bg-white text-black hover:bg-P transition-all duration-300 cursor-pointer group"
+              className="font-bold font-Inter text-[21px]  flex items-center gap-[20px] px-4 py-3 rounded-lg border bg-white text-900 hover:bg-P transition-all duration-300 cursor-pointer group"
             >
-              <span className="font-medium text-black group-hover:text-white">{item.label}</span>
-              <div className="w-7 h-7 flex items-center justify-center rounded-full bg-blue-100 text-P transition-all duration-300 group-hover:bg-P group-hover:text-white">
-                <FaArrowRight size={12} />
+               <div className="">
+               <img src={Brochure} alt="icon" />
               </div>
+              <span className="font-medium text-black ">{item.label}</span>
             </div>
           ))}
         </div>
