@@ -1,9 +1,8 @@
 import { NavLink } from "react-router-dom";
-import { BsChatDots } from "react-icons/bs";
 import { FaAngleDown } from "react-icons/fa";
 import { useState } from "react";
-import massage from '../assets/Massage.png'
-import iconBg from '../assets/icon_Background.png'
+import massage from "../assets/Massage.png";
+import iconBg from "../assets/icon_Background.png";
 
 const getActiveClass = ({ isActive }) =>
   isActive
@@ -12,6 +11,7 @@ const getActiveClass = ({ isActive }) =>
 
 const Navbar = () => {
   const [hoveredMenu, setHoveredMenu] = useState(null);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   const menuItems = [
     {
@@ -25,10 +25,7 @@ const Navbar = () => {
         { label: "Home 05", to: "/home-05" },
       ],
     },
-    {
-      label: "About Us",
-      to: "/about_us",
-    },
+    { label: "About Us", to: "/about_us" },
     {
       label: "Service",
       to: "/service",
@@ -97,11 +94,27 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="relative bg-100 z-[100] ">
+    <nav className="relative z-[100]">
+      {/* Background Image */}
       <div className="absolute top-0">
         <img src={iconBg} alt="" />
       </div>
-      <div className="pt-[22px] pb-[22px]">
+
+      {/* Mobile Header */}
+      <div className="md:hidden flex justify-between items-center px-4 py-4 bg-white">
+        <img src="/logo.png" alt="Logo" className="w-[120px]" />
+        <button onClick={() => setShowMobileMenu(!showMobileMenu)}>
+          <svg width="30" height="20" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M0.571289 0H23.4284V2.28571H0.571289V0ZM6.28557 5.71429H23.4284V8H6.28557V5.71429ZM13.4284 11.4286H23.4284V13.7143H13.4284V11.4286Z"
+              fill="#252B42"
+            />
+          </svg>
+        </button>
+      </div>
+
+      {/* Desktop Navbar */}
+      <div className="hidden md:block pt-[22px] pb-[22px]">
         <div className="grid grid-cols-[200px_auto_1fr] items-center">
           {/* Logo */}
           <div className="relative">
@@ -111,7 +124,7 @@ const Navbar = () => {
           </div>
 
           {/* Menu */}
-          <ul className="flex gap-[30px] items-center relative ml-[120px]">
+          <ul className="flex gap-[30px] items-center ml-[120px]">
             {menuItems.map((item, index) => (
               <li
                 key={index}
@@ -119,17 +132,16 @@ const Navbar = () => {
                 onMouseEnter={() => setHoveredMenu(index)}
                 onMouseLeave={() => setHoveredMenu(null)}
               >
-                {/* Menu Item with padding to bridge the gap */}
                 <div className="flex items-center gap-1 cursor-pointer pb-[10px]">
                   <NavLink to={item.to} className={getActiveClass}>
                     {item.label}
                   </NavLink>
                   {(item.dropdown || item.megaMenu) && (
-                    <FaAngleDown className=" text-900 group-hover:text-P transition-all duration-300" />
+                    <FaAngleDown className="text-900 group-hover:text-P transition-all duration-300" />
                   )}
                 </div>
 
-                {/* Single Column Dropdown */}
+                {/* Dropdown */}
                 {item.dropdown && hoveredMenu === index && (
                   <ul className="absolute top-[25px] left-0 bg-white rounded-md overflow-hidden w-[180px] z-50 border border-gray-100">
                     {item.dropdown.map((dropItem, i) => (
@@ -170,22 +182,46 @@ const Navbar = () => {
             ))}
           </ul>
 
-          {/* Right Section */}
+          {/* Contact Info */}
           <div className="flex justify-end items-center mr-[40px]">
             <div className="flex gap-[17px] items-center">
-              <img src={massage} alt='icon' />
+              <img src={massage} alt="icon" />
               <div>
-                <p className="text-[12px] leading-[18px] font-medium text-900">
-                  Need help?
-                </p>
-                <p className="text-[16px] leading-[24px] font-semibold text-900">
-                  (307) 555-0133
-                </p>
+                <p className="text-[12px] leading-[18px] font-medium text-900">Need help?</p>
+                <p className="text-[16px] leading-[24px] font-semibold text-900">(307) 555-0133</p>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {showMobileMenu && (
+        <div className="md:hidden px-4 pb-4 bg-white">
+          <ul className="flex flex-col gap-4 mt-4">
+            {menuItems.map((item, index) => (
+              <li key={index}>
+                <NavLink
+                  to={item.to}
+                  onClick={() => setShowMobileMenu(false)}
+                  className="text-black text-lg font-medium hover:text-blue-500"
+                >
+                  {item.label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+
+          {/* Mobile Contact */}
+          <div className="mt-4 flex gap-3 items-center">
+            <img src={massage} alt="icon" className="w-[30px]" />
+            <div>
+              <p className="text-sm font-medium text-900">Need help?</p>
+              <p className="text-base font-semibold text-900">(307) 555-0133</p>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
